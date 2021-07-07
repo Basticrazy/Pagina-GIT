@@ -3,6 +3,10 @@ Esto es un prueba de recuperado y bajado de manera local con:  git fetch //-> no
 							       git merge origin/master //-> une los cambios realizados (merge) que se han hecho en origin (GitHub) hacia la 
 							       			       // rama local master (nuestro computador).
 */
+/*
+Esto es un prueba de recuperado y bajado de manera local con: git pull origin master //-> une los cambios realizados de manera remota en el GitHub (origin) de la rama master
+										     //hacia nuestro computador.
+*/
 /////////////////////////////SVG STYLES/////////////////////////////
 
 let objectLogo = document.querySelector(".logo");
