@@ -1,4 +1,10 @@
+/*
+Esto es un prueba de recuperado y bajado de manera local con:  git fetch //-> nos muestra si hay cambios en el GitHub.
+							       git merge origin/master //-> une los cambios realizados (merge) que se han hecho en origin (GitHub) hacia la 
+							       			       // rama local master (nuestro computador).
+*/
 /////////////////////////////SVG STYLES/////////////////////////////
+
 let objectLogo = document.querySelector(".logo");
 
 window.addEventListener("load", () => {
