@@ -1,0 +1,169 @@
+rect#background.accent{
+	fill: #0000ff;
+}
+.div-contenedor{
+	display: grid;
+
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 8% 36% 46% 10%; 
+
+	/*grid-template-areas: 
+	"header header header"
+	"presentation presentation presentation"
+	"content content content"
+	"content content content"
+	"footer footer footer";*/
+
+	height: 95vh;
+}
+
+.div-contenedor__nav__header{
+	grid-column: 1/span 3; /*le indicamos al header que ocupara 3 espacios de columnas, desde la primera columna.*/
+	grid-row: 1/span 1; /*Le indicamos que ocupe solo un espacio de fila.*/
+	background: skyblue;
+	
+}
+
+/*//////////////BLOQUE DE PRESENTACION//////////////*/
+
+.div-contenedor__presentacion{
+	grid-column: 1/span 3;
+	grid-row: 2/span 1; /*Le indicamos que ocupe solo un espacio de fila. En la fila 2.*/
+	background: red;
+	/*background-image: url(recursos/pep.gif);
+	background-size: cover;*/
+	position: relative;
+
+}
+
+/*DIV DE FONDO <div>*/
+.div-contenedor__presentacion--fondo{
+	position: absolute;
+	width: 55%;
+	height: 75%;
+	/*centrar imagen*/
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	
+	border: 1.5px solid black;
+
+	text-align: center; /*Alineamos todos los elementos del div*/
+
+}
+
+/*PARRAFO <p>*/
+
+/*GIF RANA PEPE <img>*/
+.div-contenedor__presentacion--gif{
+	position: relative;
+	width: 20%;
+	height: 40%;
+
+	margin-top: 1.50%;
+	
+	margin-bottom: auto;
+	top: 0;
+	bottom: 0;
+	
+}
+/*FIN DIV DE FONDO*/
+
+/*Ambas pantallas falsas <div>*/
+.div-contenedor__presentacion--pantalla-falsa{
+	position: absolute;
+	width: 50%;
+	height: 100%;
+
+	/*Propiedades transition*/
+	transition-property: transform;
+	transition-duration: 0.8s;
+	transition-timing-function: linear;
+}
+
+/*Pantalla falsa izquerda*/
+.div-contenedor__presentacion--pantalla-falsa:nth-of-type(2){
+	
+	background: blue;
+
+}
+
+/*Pantalla falsa derecha*/
+.div-contenedor__presentacion--pantalla-falsa:nth-of-type(3){
+	
+	right: 0%; /*Lo alejamos lo menos posible del lado derecho*/
+	background: green;
+
+}
+/*Fin ambas pantallas falsas <div>*/
+
+/*//////////////FIN BLOQUE DE PRESENTACION//////////////*/
+
+
+
+.div-contenedor__content{
+	grid-column: 1/span 3;
+	grid-row: auto/span 1;
+	background-color: orange;
+}
+
+.div-contenedor__footer{
+	grid-column: 1/span 3;
+	grid-row: auto/span 1;
+	background-color: darkred;
+}
+
+/*///////////////////////////HOVERS///////////////////////////*/
+
+/*----Bloque de presentacion----*/
+
+.div-contenedor__presentacion:hover > .div-contenedor__presentacion--pantalla-falsa:nth-of-type(2){
+	/*transform: translateX(-250vh); Esta linea no sirve de mucho*/
+	transform: translateX(-100%);
+}
+
+.div-contenedor__presentacion:hover > .div-contenedor__presentacion--pantalla-falsa:nth-of-type(3){
+	/*transform: translateX(250vh); Esta linea no sirve de mucho*/
+	transform: translateX(100%);
+}
+
+/*///////////////////////////FIN HOVERS///////////////////////////*/
+
+@keyframes rotar {
+	0%{
+		transform: rotate(0deg);
+		
+	}
+
+	
+
+	100%{
+		
+		transform: rotate(359deg);
+	}
+}
+
+@keyframes deslizarFinDerecha {
+
+	0%{
+		
+	}
+
+	100%{
+		transform: translateX(50px);
+	}
+
+
+}
+
+@keyframes deslizarFinIzquerda {
+
+	0%{
+		
+		
+	}
+
+	100%{
+		transform: translateX(0);
+	}
