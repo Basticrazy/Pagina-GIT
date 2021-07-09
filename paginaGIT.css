@@ -1,3 +1,42 @@
+.bigbast{
+	/*background: radial-gradient(circle, orange, green,red);
+	/*transition-property: background;
+	transition-duration: 2s;
+	transition-timing-function: linear;*/
+
+	/*background: radial-gradient(farthest-corner at top, #FFFFFF 0%, #ffb3ff 4%, #ff33ff 12.25%, #800080 31.25%, #b300b3 50%) top right/200% 200%;
+	*/
+
+	/*background: radial-gradient(circle, orange 10%,green 10%,red 25%);
+	*/
+	background: radial-gradient(circle, orange, green,red);
+	background-size: 300% 300%;
+	animation-name: gradient-background;
+	animation-duration: 3.8s;
+	animation-iteration-count: infinite;
+	animation-timing-function: cubic-bezier(1,1,1,1);
+	animation-direction: normal;
+	animation-fill-mode: both;	
+	
+  	
+	overflow:hidden;
+
+}
+
+.bigbastb{
+	background: radial-gradient(circle, orange, green,red);
+	background-size: 200% 200%;
+	animation-name: gradient-background-o2;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: cubic-bezier(1,1,1,1);
+	animation-direction: alternate;
+	animation-fill-mode: both;	
+	
+  	
+	overflow:hidden;
+}
+
 rect#background.accent{
 	fill: #0000ff;
 }
@@ -130,13 +169,84 @@ rect#background.accent{
 
 /*///////////////////////////FIN HOVERS///////////////////////////*/
 
+/*///////////////////////////ANIMACIONES///////////////////////////*/
+@keyframes gradient-background{
+	/*0%{
+		background:green;
+	}
+	50%{
+		background: orange;
+	}
+	100%{
+		background: red;
+	}*/
+
+
+	/*0%{
+		background: radial-gradient(circle, orange, green,red);
+	}
+	50%{
+		background: radial-gradient(circle, red, orange,green);
+
+	}
+
+	100%{
+
+		background: radial-gradient(circle, green, red,orange);
+
+	}*/
+
+	0%{
+		background-position: 25% 25%; /*horizontal, vertical*/
+	}
+	25%{
+		background-position: 75% 25%;
+	}
+	50%{
+		background-position: 75% 75%;
+	}
+	75%{
+		background-position: 25% 75%;	
+	}
+	100%{
+		background-position: 25% 25%;	
+	}
+}
+
+@keyframes gradient-background-o2{
+	0%{
+		background-position: 25% 25%; /*horizontal, vertical*/
+	}
+	25%{
+		background-position: 75% 25%;
+	}
+	50%{
+		background-position: 75% 75%;
+	}
+	75%{
+		background-position: 25% 75%;	
+	}
+	100%{
+		background-position: 25% 25%;	
+	}
+	/*0%{
+		background-size: 100% 100%;  //width, height
+	}
+	50%{
+		background-size: 300% 300%;
+	}
+	100%{
+		background-size: 600% 600%;	
+	}*/
+}
+/*///////////////////////////FIN ANIMACIONES///////////////////////////*/
 @keyframes rotar {
 	0%{
 		transform: rotate(0deg);
 		
 	}
-
 	
+
 
 	100%{
 		
