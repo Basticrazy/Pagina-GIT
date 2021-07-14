@@ -9,17 +9,17 @@ Esto es un prueba de recuperado y bajado de manera local con: git pull origin ma
 */
 /////////////////////////////SVG STYLES/////////////////////////////
 
-let objectLogo = document.querySelector(".logo");
+//let objectLogo = document.querySelector(".logo");
 
-window.addEventListener("load", () => {
+//window.addEventListener("load", () => {
 
 	/*Hacemos referecia al svg que esta dentro del objectLogo.*/
-	const svgLogo = objectLogo.innerText;
+//	const svgLogo = objectLogo.innerText;
 
 
 	//LOGRAR HACER QUE EL SVG SE VEA POR CONSOLA.
-	console.log(svgLogo);
-});
+//	console.log(svgLogo);
+//});
 
 /////////////////////////////FIN SVG STYLES/////////////////////////////
 
