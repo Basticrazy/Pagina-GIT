@@ -1,3 +1,34 @@
+.__header-nav-ul{
+	align-self: center; /*Alineacion en el eje Y*/
+	display: inline-block;
+}
+
+.__header-nav-ul--li{
+
+}
+.__header-nav-ul--li::marker{
+	content: "";
+}
+.div-contenedor__nav__header{
+	grid-column: 1/span 3; /*le indicamos al header que ocupara 3 espacios de columnas, desde la primera columna.*/
+	grid-row: 1/span 1; /*Le indicamos que ocupe solo un espacio de fila.*/
+	background: skyblue;
+	position: relative;
+
+	
+}
+
+.__header-nav{
+	position: relative;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-around; /*Alineacion de elementos hijos en el eje X*/
+	align-content: center;
+	height: 100%;
+	/*text-align: center;
+
+*/}
+
 .bigbast{
 
 	/*background: radial-gradient(farthest-corner at top, #FFFFFF 0%, #ffb3ff 4%, #ff33ff 12.25%, #800080 31.25%, #b300b3 50%) top right/200% 200%;
@@ -12,10 +43,22 @@
 	animation-iteration-count: infinite;
 	animation-timing-function: cubic-bezier(1,1,1,1);
 	animation-direction: normal;
-	animation-fill-mode: both;	
+	animation-fill-mode: both;
+
+	max-width: unset;
+  	width: 100px;
+  	height: 100%;
+  	object-fit: cover; /*Mostramos siempre el centro del svg
+  						independiente del tamaño de la pantalla.*/
+
+
+  	position: absolute;
+  	margin: auto;
+	right: 0;
+	left: 0;
+
 	
-  	
-	overflow:hidden;
+
 
 }
 
@@ -52,12 +95,7 @@ rect#background.accent{
 	height: 95vh;
 }
 
-.div-contenedor__nav__header{
-	grid-column: 1/span 3; /*le indicamos al header que ocupara 3 espacios de columnas, desde la primera columna.*/
-	grid-row: 1/span 1; /*Le indicamos que ocupe solo un espacio de fila.*/
-	background: skyblue;
-	
-}
+
 
 /*//////////////BLOQUE DE PRESENTACION//////////////*/
 
@@ -126,6 +164,7 @@ rect#background.accent{
 
 /*Pantalla falsa izquerda*/
 .div-contenedor__presentacion--pantalla-falsa:nth-of-type(2){
+	
 	
 
 	/*background-image: url(recursos/cortina.svg);
