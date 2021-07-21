@@ -67,7 +67,7 @@
 	right: 0;
 	left: 0;
 
-	display: none; /*quitar esto despues de pruebas*/
+	/*display: none; /*quitar esto despues de pruebas*/
 
 
 	
@@ -345,3 +345,17 @@ rect#background.accent{
 	100%{
 		transform: translateX(0);
 	}
+}
+
+/*//////////////////////////MEDIAS QUERIES//////////////////////////*/
+@media only screen and (max-width: 345px){
+	.bigbast{
+		display: none;
+	}
+
+	.__header-nav{
+		background-image: url(recursos/bigbast.svg);
+		background-size: cover;
+		background-position: center;
+	}
+}
