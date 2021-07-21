@@ -1,10 +1,18 @@
 .__header-nav-ul{
 	align-self: center; /*Alineacion en el eje Y*/
-	display: inline-block;
+	padding: 0; /*1em*/
+	flex-grow: 1;
+	
 }
 
 .__header-nav-ul--li{
-
+	display: inline-block;
+	padding: 1em 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	outline: 1px solid blue;
+	outline-offset: -1px;
 }
 .__header-nav-ul--li::marker{
 	content: "";
@@ -14,16 +22,18 @@
 	grid-row: 1/span 1; /*Le indicamos que ocupe solo un espacio de fila.*/
 	background: skyblue;
 	position: relative;
-
+	/*height: 7.5vh;*/
+	height: max-content;
 	
 }
 
 .__header-nav{
 	position: relative;
 	display: flex;
-	flex-wrap: nowrap;
-	justify-content: space-around; /*Alineacion de elementos hijos en el eje X*/
-	align-content: center;
+	flex-flow: row wrap;
+	/*justify-content: space-around; /*Alineacion de elementos hijos en el eje X*/
+	justify-content: space-evenly;
+	align-content: space-around;
 	height: 100%;
 	/*text-align: center;
 
@@ -46,16 +56,19 @@
 	animation-fill-mode: both;
 
 	max-width: unset;
-  	width: 100px;
-  	height: 100%;
+  	width: 18vh; /*15vh => 100px*/
+  	height: 50px;
   	object-fit: cover; /*Mostramos siempre el centro del svg
   						independiente del tamaño de la pantalla.*/
 
 
-  	position: absolute;
-  	margin: auto;
+  	position: relative;
+  	/*margin: auto;*/
 	right: 0;
 	left: 0;
+
+	display: none; /*quitar esto despues de pruebas*/
+
 
 	
 
@@ -83,7 +96,7 @@ rect#background.accent{
 	display: grid;
 
 	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: 8% 36% 46% 10%; 
+	/*grid-template-rows: 8% 36% 46% 10%; 
 
 	/*grid-template-areas: 
 	"header header header"
@@ -92,7 +105,7 @@ rect#background.accent{
 	"content content content"
 	"footer footer footer";*/
 
-	height: 95vh;
+	/*height: 95vh;*/
 }
 
 
@@ -106,7 +119,8 @@ rect#background.accent{
 	/*background-image: url(recursos/pep.gif);
 	background-size: cover;*/
 	position: relative;
-
+	overflow: hidden;
+	height: 36vh;
 }
 
 /*DIV DE FONDO <div>*/
@@ -196,12 +210,15 @@ rect#background.accent{
 	grid-column: 1/span 3;
 	grid-row: auto/span 1;
 	background-color: orange;
+	/*height: max-content; /*Colocar esto cuando haya contenido.*/
+	height: 46vh;
 }
 
 .div-contenedor__footer{
 	grid-column: 1/span 3;
 	grid-row: auto/span 1;
 	background-color: darkred;
+	height: 10vh;
 }
 
 /*///////////////////////////HOVERS///////////////////////////*/
