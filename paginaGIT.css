@@ -1,3 +1,68 @@
+img{
+	max-width: unset;
+}
+
+
+
+/*///////////////////SECCION CONTENT///////////////////*/
+.div-contenedor__content{
+	grid-column: 1/span 3;
+	grid-row: auto/span 1;
+	background-color: orange;
+	height: max-content; /*Colocar esto cuando haya contenido.*/
+	
+}
+
+.__content-contenedor{
+	position: relative;
+	display: flex;
+	flex-grow: row nowrap;
+	height: 46vh;
+	width: 100%;
+}
+
+/*/////////HTML CONTENT/////////*/
+.__content--contenedor__html-icon{
+	border: 1px solid blue;
+	object-fit: contain;
+	height: 100%;
+	width: 100%;
+}
+.__html-icon--parraf{
+	overflow-y: overlay;
+}
+
+/*/////////FIN HTML CONTENT/////////*/
+
+
+/*/////////CSS CONTENT/////////*/
+.__content--contenedor__css-icon{
+	border: 1px solid blue;
+	object-fit: contain;
+	height: 100%;
+	width: 100%;
+	order: 1;
+}
+.__css-icon--parraf{
+	overflow-y: overlay;
+}
+
+/*/////////FIN CSS CONTENT/////////*/
+
+/*///////////////////FIN SECCION CONTENT///////////////////*/
+
+.__header-nav{
+	position: relative;
+	display: flex;
+	flex-flow: row wrap;
+	/*justify-content: space-around; /*Alineacion de elementos hijos en el eje X*/
+	justify-content: space-evenly;
+	align-content: space-around;
+	height: 100%;
+	/*text-align: center;
+
+*/}
+
 .__header-nav-ul{
 	align-self: center; /*Alineacion en el eje Y*/
 	padding: 0; /*1em*/
@@ -27,17 +92,7 @@
 	
 }
 
-.__header-nav{
-	position: relative;
-	display: flex;
-	flex-flow: row wrap;
-	/*justify-content: space-around; /*Alineacion de elementos hijos en el eje X*/
-	justify-content: space-evenly;
-	align-content: space-around;
-	height: 100%;
-	/*text-align: center;
 
-*/}
 
 .bigbast{
 
@@ -206,13 +261,7 @@ rect#background.accent{
 
 
 
-.div-contenedor__content{
-	grid-column: 1/span 3;
-	grid-row: auto/span 1;
-	background-color: orange;
-	/*height: max-content; /*Colocar esto cuando haya contenido.*/
-	height: 46vh;
-}
+
 
 .div-contenedor__footer{
 	grid-column: 1/span 3;
