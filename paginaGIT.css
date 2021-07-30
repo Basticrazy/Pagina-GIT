@@ -21,15 +21,24 @@ img{
 	width: 100%;
 }
 
-/*/////////HTML CONTENT/////////*/
-.__content--contenedor__html-icon{
+.__content-contenedor img{
 	border: 1px solid blue;
 	object-fit: contain;
 	height: 100%;
 	width: 100%;
 }
-.__html-icon--parraf{
+
+.__content-contenedor p{
 	overflow-y: overlay;
+}
+
+
+/*/////////HTML CONTENT/////////*/
+.__content--contenedor__html-icon{
+	
+}
+.__html-icon--parraf{
+	
 }
 
 /*/////////FIN HTML CONTENT/////////*/
@@ -37,14 +46,10 @@ img{
 
 /*/////////CSS CONTENT/////////*/
 .__content--contenedor__css-icon{
-	border: 1px solid blue;
-	object-fit: contain;
-	height: 100%;
-	width: 100%;
 	order: 1;
 }
 .__css-icon--parraf{
-	overflow-y: overlay;
+
 }
 
 /*/////////FIN CSS CONTENT/////////*/
