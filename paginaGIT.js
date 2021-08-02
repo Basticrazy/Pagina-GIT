@@ -7,6 +7,53 @@ Esto es un prueba de recuperado y bajado de manera local con:  git fetch //-> no
 Esto es un prueba de recuperado y bajado de manera local con: git pull origin master //-> une los cambios realizados de manera remota en el GitHub (origin) de la rama master
 										     //hacia nuestro computador.
 */
+
+
+///////CODIGO PARA OBTENER Y MODIFICAR ESTILOS A TRA VES DE STYLESHEETS.///////
+/*NOTA: Para que esto funcione debe estar dentro de un mismo servidor o dentro de un mismo dominio.*/
+/*console.log(document.styleSheets[1].cssRules);
+let obtenerScrollParrafos= () => {
+		for(let i=0; i<document.styleSheets[1].cssRules.length; i++){
+			if(document.styleSheets[1].cssRules[i].selectorText == ".__content-contenedor p::-webkit-scrollbar"){
+				return document.styleSheets[1].cssRules[i];
+			}
+	}
+}
+let scrollParrafos = obtenerScrollParrafos();
+console.log(scrollParrafos);*/
+///////FIN CODIGO PARA OBTENER Y MODIFICAR ESTILOS A TRA VES DE STYLESHEETS.///////
+
+
+
+/*////////CODIGO PARA REEMPLAZAR ESTILOS DE PSEUDOELEMENTOS////////*/
+var addRule = (function (style) {
+    var sheet = document.head.appendChild(style).sheet;
+    return function (selector, css) {
+        var propText = typeof css === "string" ? css : Object.keys(css).map(function (p) {
+            return p + ":" + (p === "content" ? "'" + css[p] + "'" : css[p]);
+        }).join(";");
+        sheet.insertRule(selector + "{" + propText + "}", sheet.cssRules.length);
+    };
+})(document.createElement("style"));
+
+
+document.querySelectorAll(".__content-contenedor p").forEach( (parrafo) => {
+		parrafo.addEventListener("scroll", (evt)=>{
+			evt.target.style.background = 'red';
+
+			console.log(evt.target.className);
+			console.log(window.getComputedStyle(evt.target, "::-webkit-scrollbar")["width"]);
+			console.log(window.getComputedStyle(evt.target, "::-webkit-scrollbar").sheet);
+
+			addRule("."+evt.target.className+"::-webkit-scrollbar",{
+				width : '0px !important'
+			});
+
+			//NOTA: AGREGAR TEMPORIZADOR AL SCROLL PARA QUE DESAPAREZCA SUAVEMENTE.
+		});
+	});
+/*////////FIN CODIGO PARA REEMPLAZAR ESTILOS DE PSEUDOELEMENTOS////////*/
+
 /////////////////////////////SVG STYLES/////////////////////////////
 
 //let objectLogo = document.querySelector(".logo");
