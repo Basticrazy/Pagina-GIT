@@ -8,6 +8,9 @@ Esto es un prueba de recuperado y bajado de manera local con: git pull origin ma
 										     //hacia nuestro computador.
 */
 
+/*
+	NOTA: RECORDAR APRENDER OBSERVER O ANIMACION SOBRE SCROLLING.
+*/
 
 ///////CODIGO PARA OBTENER Y MODIFICAR ESTILOS A TRA VES DE STYLESHEETS.///////
 /*NOTA: Para que esto funcione debe estar dentro de un mismo servidor o dentro de un mismo dominio.*/
@@ -26,7 +29,7 @@ console.log(scrollParrafos);*/
 
 
 /*////////CODIGO PARA REEMPLAZAR ESTILOS DE PSEUDOELEMENTOS////////*/
-var addRule = (function (style) {
+/*var addRule = (function (style) {
     var sheet = document.head.appendChild(style).sheet;
     return function (selector, css) {
         var propText = typeof css === "string" ? css : Object.keys(css).map(function (p) {
@@ -34,24 +37,37 @@ var addRule = (function (style) {
         }).join(";");
         sheet.insertRule(selector + "{" + propText + "}", sheet.cssRules.length);
     };
-})(document.createElement("style"));
+})(document.createElement("style"));*/
 
 
-document.querySelectorAll(".__content-contenedor p").forEach( (parrafo) => {
+/*document.querySelectorAll(".__content-contenedor p").forEach( (parrafo) => {
 		parrafo.addEventListener("scroll", (evt)=>{
 			evt.target.style.background = 'red';
 
-			console.log(evt.target.className);
+			/*console.log(evt.target.className);
 			console.log(window.getComputedStyle(evt.target, "::-webkit-scrollbar")["width"]);
-			console.log(window.getComputedStyle(evt.target, "::-webkit-scrollbar").sheet);
+			console.log(window.getComputedStyle(evt.target, "::-webkit-scrollbar").sheet);*/
 
-			addRule("."+evt.target.className+"::-webkit-scrollbar",{
-				width : '0px !important'
+			/*addRule("."+evt.target.className+"::-webkit-scrollbar",{
+				"animation-name": "esconderScroll !important",
+				"animation-duration": "2s !important",
+				"animation-iteration-count": "1 !important",
+				"animation-timing-function": "cubic-bezier(1,1,1,1) !important",
+				"animation-direction": "normal !important",
+				"animation-fill-mode": "forwards !important"
+			});*/
+
+			/*setTimeout(()=>{
+				addRule("."+evt.target.className+"::-webkit-scrollbar",{
+				transition : 'width 2s linear 2s !important',
+				
 			});
+			}, 1000);*/
+			
 
 			//NOTA: AGREGAR TEMPORIZADOR AL SCROLL PARA QUE DESAPAREZCA SUAVEMENTE.
-		});
-	});
+		//});
+	//});
 /*////////FIN CODIGO PARA REEMPLAZAR ESTILOS DE PSEUDOELEMENTOS////////*/
 
 /////////////////////////////SVG STYLES/////////////////////////////

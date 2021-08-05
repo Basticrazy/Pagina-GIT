@@ -1,3 +1,18 @@
+body{
+	overflow-y: overlay;
+}
+
+body::-webkit-scrollbar,body::-webkit-scrollbar-thumb {
+  width: .5vh;
+  -webkit-box-shadow: inset 0 0 0 1vh rgba(100, 1, 9, 0.2);
+  /*background-color: #555;*/
+  background-clip: padding-box;
+  border-radius: .5vh;
+}
+body::-webkit-scrollbar-thumb {
+	-webkit-box-shadow: inset 0 0 0 1vh rgba(100, 1, 9, 0.9);
+}
+
 img{
 	max-width: unset;
 }
@@ -35,36 +50,71 @@ img{
 	width: 100%;
 }
 
+
 .__content-contenedor p{
+	color: rgba(0, 0, 0, 0); /*Efecto para transicion hover suave del scroll: Aqui hacemos transparentes las letras.*/
+	text-shadow: 0 0 black; /*Efecto para transicion hover suave del scroll: Aqui solo hacemos notar por su sombra*/
+	transition: color .4s ease;
 	overflow-y: overlay;
+}
+.__content-contenedor:hover > p{
+	color: rgba(0, 0, 0, 0.3);
 }
 
 /*SCROLL STYLE*/
 /*Para cambiar el estilo del scroll, tenemos que empezar por
 el ::-webkit-scrollbar*/
 
+/*.__content-contenedor:hover > p::-webkit-scrollbar{
+	width: 1vh;
+}*/
+
 /*::-webkit-scrollbar: hace referencia al scroll completo.*/
-.__content-contenedor p::-webkit-scrollbar {
-    width: 1vh;
+/*.__content-contenedor p::-webkit-scrollbar {
+	width: 0vh;
+    
+	
+    /*animation-name: esconder-scroll;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: cubic-bezier(1,1,1,1);
+	animation-direction: alternate;
+	animation-fill-mode: both;*/
 
-}
+/*}
 
-.__content-contenedor p::-webkit-scrollbar-track {
+/*::-webkit-scrollbar-track: hace referencia al "caminito (carril)" del scroll.*/
+/*.__content-contenedor p::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px grey; 
   border-radius: 10px;
 }
 
-.__content-contenedor p::-webkit-scrollbar-thumb {
- 
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
-  background-color: #555;
-  border-radius: 10px;
+/*::-webkit-scrollbar-thumb: hace referencia al "tren (el elemento que se mueve del scroll)" del scroll.*/
+.__content-contenedor p::-webkit-scrollbar:,.__content-contenedor p::-webkit-scrollbar-thumb {
+  width: 1vh;
+  -webkit-box-shadow: inset 0 0 0 1vh;
+  /*background-color: #555;*/
+  background-clip: padding-box;
+  border-radius: 1vh;
 }
 
-.container::-webkit-scrollbar-thumb:active {
-    background-color: #999999;
+.__content-contenedor p::-webkit-scrollbar,.__content-contenedor p::-webkit-scrollbar-thumb {
+	width: 1vh;
+	-webkit-box-shadow: inset 0 0 0 1vh;
+	/*background-color: #555;*/
+	background-clip: padding-box;
+	border-radius: 1vh;
 }
 
+.__content-contenedor:nth-child(even) p::-webkit-scrollbar,.__content-contenedor:nth-child(even) p::-webkit-scrollbar-thumb{
+	/*.5 los scroll de los child even (2,4,6,etc. Que en este caso son los scroll izquerdos) para que concuerden con los scroll estan a la derecha*/
+	width: .5vh; 
+	border-radius: .5vh; 
+}
+
+.__content-contenedor p::-webkit-scrollbar-thumb:active {
+	background: #fff;
+}
 
 /*/////////HTML CONTENT/////////*/
 .__content--contenedor__html-icon{
@@ -322,9 +372,22 @@ rect#background.accent{
 	transform: translateX(100%);
 }
 
+
+
 /*///////////////////////////FIN HOVERS///////////////////////////*/
 
 /*///////////////////////////ANIMACIONES///////////////////////////*/
+
+@keyframes esconder-scroll{
+	0%{
+		width: 1vh;
+	}
+	100%{
+		width: 0px;
+	}
+}
+
+
 @keyframes gradient-background{
 	/*0%{
 		background:green;
