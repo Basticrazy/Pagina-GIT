@@ -1,3 +1,12 @@
+:root{
+	--main-text-color: #c3c3c3;
+	--main-background-color: #000000;
+}
+
+*{
+	color: var(--main-text-color);
+	font-style: italic;
+}
 body{
 	overflow-y: overlay;
 }
@@ -53,7 +62,7 @@ img{
 
 .__content-contenedor p{
 	color: rgba(0, 0, 0, 0); /*Efecto para transicion hover suave del scroll: Aqui hacemos transparentes las letras.*/
-	text-shadow: 0 0 black; /*Efecto para transicion hover suave del scroll: Aqui solo hacemos notar por su sombra*/
+	text-shadow: 0 0 var(--main-text-color); /*Efecto para transicion hover suave del scroll: Aqui solo hacemos notar por su sombra*/
 	transition: color .4s ease;
 	overflow-y: overlay;
 }
@@ -147,14 +156,14 @@ el ::-webkit-scrollbar*/
 	justify-content: space-evenly;
 	align-content: space-around;
 	height: 100%;
-	/*text-align: center;
+	/*text-align: center;*/
 
-*/}
+}
 
 .__header-nav-ul{
 	align-self: center; /*Alineacion en el eje Y*/
 	padding: 0; /*1em*/
-	flex-grow: 1;
+	flex: 1 1 0;
 	
 }
 
@@ -164,8 +173,8 @@ el ::-webkit-scrollbar*/
 	width: 100%;
 	height: 100%;
 	text-align: center;
-	outline: 1px solid blue;
-	outline-offset: -1px;
+	/*outline: 1px solid blue;
+	outline-offset: -1px;*/
 }
 .__header-nav-ul--li::marker{
 	content: "";
@@ -173,7 +182,7 @@ el ::-webkit-scrollbar*/
 .div-contenedor__nav__header{
 	grid-column: 1/span 3; /*le indicamos al header que ocupara 3 espacios de columnas, desde la primera columna.*/
 	grid-row: 1/span 1; /*Le indicamos que ocupe solo un espacio de fila.*/
-	background: skyblue;
+	background: var(--main-background-color); /*#060606;*/
 	position: relative;
 	/*height: 7.5vh;*/
 	height: max-content;
@@ -189,14 +198,14 @@ el ::-webkit-scrollbar*/
 
 	/*background: radial-gradient(circle, orange 10%,green 10%,red 25%);
 	*/
-	background: radial-gradient(circle, orange, green,red);
+	/*background: radial-gradient(circle, orange, green,red);*/
 	background-size: 300% 300%;
-	animation-name: gradient-background;
+	/*animation-name: gradient-background;
 	animation-duration: 3.8s;
 	animation-iteration-count: infinite;
 	animation-timing-function: cubic-bezier(1,1,1,1);
 	animation-direction: normal;
-	animation-fill-mode: both;
+	animation-fill-mode: both;*/
 
 	max-width: unset;
   	width: 18vh; /*15vh => 100px*/
@@ -207,10 +216,14 @@ el ::-webkit-scrollbar*/
 
   	position: relative;
   	/*margin: auto;*/
-	right: 0;
-	left: 0;
-
+	/*right: 50%;*/
+	/*left: 50%;*/
+	/*transform: translate(50%);*/
+	border-radius: 5px;
 	/*display: none; /*quitar esto despues de pruebas*/
+
+	background-image: url(recursos/circle-background.gif);
+	background-size: cover;
 
 
 	
@@ -258,7 +271,8 @@ rect#background.accent{
 .div-contenedor__presentacion{
 	grid-column: 1/span 3;
 	grid-row: 2/span 1; /*Le indicamos que ocupe solo un espacio de fila. En la fila 2.*/
-	background: red;
+	background-image: url(recursos/circle-background.gif);
+	background-position: bottom;
 	/*background-image: url(recursos/pep.gif);
 	background-size: cover;*/
 	position: relative;
