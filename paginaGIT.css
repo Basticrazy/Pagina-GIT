@@ -164,6 +164,7 @@ el ::-webkit-scrollbar*/
 	align-self: center; /*Alineacion en el eje Y*/
 	padding: 0; /*1em*/
 	flex: 1 1 0;
+	min-width: 108px;
 	
 }
 
@@ -208,7 +209,7 @@ el ::-webkit-scrollbar*/
 	animation-fill-mode: both;*/
 
 	max-width: unset;
-  	width: 18vh; /*15vh => 100px*/
+  	width: 120px; /*18vh;*/ /*15vh => 100px*/
   	height: 50px;
   	object-fit: cover; /*Mostramos siempre el centro del svg
   						independiente del tamaño de la pantalla.*/
@@ -223,7 +224,9 @@ el ::-webkit-scrollbar*/
 	/*display: none; /*quitar esto despues de pruebas*/
 
 	background-image: url(recursos/circle-background.gif);
-	background-size: cover;
+	background-position-y: 0px;
+	background-position-x: center;
+	background-size: 124px;
 
 
 	
@@ -349,6 +352,27 @@ rect#background.accent{
 
 }
 
+#--presentacion-falsa__logo{
+    object-fit: cover;
+    object-position: center;
+    max-width: 50;
+    /* max-width: max-content; */
+    /* max-width: 95%; */
+    /* position: relative; */
+    height: 100%;
+    width: 100%;
+    max-width: 562px;
+    /* padding: 0; */
+    /* margin: 0; */
+
+}
+
+#--presentacion-falsa__texto{
+    /* height: 100%; */
+    text-align: center;
+    font-size: 200%;
+    font-family: fantasy;
+}
 
 /*Pantalla falsa derecha*/
 .div-contenedor__presentacion--pantalla-falsa:nth-of-type(3){
@@ -512,7 +536,7 @@ rect#background.accent{
 }
 
 /*//////////////////////////MEDIAS QUERIES//////////////////////////*/
-@media only screen and (max-width: 345px){
+@media only screen and (max-width: 373px){
 	.bigbast{
 		display: none;
 	}
