@@ -368,10 +368,16 @@ rect#background.accent{
 }
 
 #--presentacion-falsa__texto{
-    /* height: 100%; */
+    height: 50%;
     text-align: center;
     font-size: 200%;
     font-family: fantasy;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 /*Pantalla falsa derecha*/
