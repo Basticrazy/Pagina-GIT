@@ -355,7 +355,6 @@ rect#background.accent{
 #--presentacion-falsa__logo{
     object-fit: cover;
     object-position: center;
-    max-width: 50;
     /* max-width: max-content; */
     /* max-width: 95%; */
     /* position: relative; */
@@ -378,6 +377,24 @@ rect#background.accent{
     bottom: 0;
     right: 0;
     left: 0;
+}
+
+#--presentacion-falsa__texto p:nth-child(2){
+	transform: translateX(50px);
+	color: transparent;
+	animation-name: deslizarTextoHaciaIzquerda;
+	animation-duration: 1s;
+	animation-delay: 0s;
+	animation-fill-mode: both;
+}
+
+#--presentacion-falsa__texto p:nth-child(3){
+	transform: translateX(50px);
+	color: transparent;
+	animation-name: deslizarTextoHaciaIzquerda;
+	animation-duration: 1s;
+	animation-delay: 1s;
+	animation-fill-mode: both;
 }
 
 /*Pantalla falsa derecha*/
@@ -541,6 +558,13 @@ rect#background.accent{
 	}
 }
 
+@keyframes deslizarTextoHaciaIzquerda{
+	100%{
+		transform: translateX(0);
+		color: unset;
+	}
+}
+
 /*//////////////////////////MEDIAS QUERIES//////////////////////////*/
 @media only screen and (max-width: 373px){
 	.bigbast{
@@ -553,3 +577,4 @@ rect#background.accent{
 		background-position: center;
 	}
 }
+
